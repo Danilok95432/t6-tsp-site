@@ -1,0 +1,196 @@
+@import 'src/assets/styles/vars';
+
+.inputElBig {
+	.inputWrapper {
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 7px;
+		position: relative;
+		p {
+			font-weight: 600;
+			color: #000000;
+			font-size: 20px;
+
+			span {
+				font-weight: 400;
+
+				b {
+					font-weight: 600;
+					display: block;
+				}
+			}
+		}
+		p.subLabel {
+			font-weight: 400;
+		}
+		.reqStar {
+			color: #01a7b4;
+			margin-left: 4px;
+			font-weight: 600;
+			font-size: 20px;
+		}
+
+		span {
+			margin-left: 10px;
+			width: 20px;
+			height: 20px;
+			cursor: pointer;
+		}
+	}
+	.controlledInput {
+		@include opensans-regular;
+		font-size: 20px;
+		padding: 9px 10px;
+		width: 100%;
+		background-color: transparent;
+		color: #000000;
+		outline: 1px solid #afafaf;
+		border: none;
+		border-radius: 3px;
+
+		&::placeholder {
+			color: #868686;
+		}
+
+		&:disabled {
+			background-color: rgba(#000000, 0.1);
+		}
+	}
+}
+
+.inputWrapper {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	gap: 8px;
+	position: relative;
+	p {
+		font-weight: 500;
+		color: #fff;
+		font-size: 18px;
+
+		span {
+			font-weight: 400;
+
+			b {
+				font-weight: 600;
+				display: block;
+			}
+		}
+	}
+	p.subLabel {
+		font-weight: 400;
+	}
+	.reqStar {
+		color: #01a7b4;
+		margin-left: 4px;
+		font-weight: 600;
+		font-size: 14px;
+	}
+
+	span {
+		margin-left: 10px;
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+	}
+}
+.controlledInput {
+	@include opensans-regular;
+	font-size: 18px;
+	padding: 16px;
+	width: 100%;
+	background-color: transparent;
+	color: #fff;
+	outline: 1px solid #ffffff4d;
+	border: none;
+	border-radius: 8px;
+
+	&::placeholder {
+		color: #868686;
+	}
+
+	&:disabled {
+		background-color: rgba(#000000, 0.1);
+	}
+}
+
+.noBorder {
+	outline: none;
+	font-size: 18px;
+	font-weight: 500;
+	padding-left: 0px;
+}
+
+.inputEl {
+	position: relative;
+	flex-grow: 1;
+
+	.warningMessage {
+		color: #f00000;
+		font-size: 14px;
+		line-height: 1;
+		padding-top: 5px;
+	}
+	.locked {
+		position: absolute;
+		top: 35px;
+		right: 15px;
+	}
+}
+
+.textareaEl {
+	width: 100%;
+	textarea {
+		height: 105px;
+	}
+}
+.textareaWrapper {
+	width: 100%;
+}
+
+.noValid {
+	outline: 1px solid #f00000;
+}
+
+.passwordInputWrapper {
+	width: 100%;
+	position: relative;
+}
+
+.passEyeBtn {
+	position: absolute;
+	width: 25px;
+	height: 18px;
+	right: 7px;
+	top: 50%;
+	transform: translateY(-50%);
+	svg {
+		height: 25px;
+	}
+
+	&:hover {
+		svg path {
+			fill: #868585;
+		}
+		&::after {
+			background-color: #868585;
+		}
+	}
+}
+
+._crossOut {
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 9px;
+		width: 26px;
+		height: 1px;
+		background-color: #d9d9d9;
+		z-index: 10;
+		transform: rotate(45deg);
+	}
+}
+

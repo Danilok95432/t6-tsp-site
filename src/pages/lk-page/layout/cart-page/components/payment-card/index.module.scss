@@ -1,0 +1,37 @@
+.card {
+	width: 100%;
+	padding: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	text-align: left;
+	border-radius: 16px;
+	border: 1px solid #c09f3d6b;
+	background-image: url('src/assets/img/slider-bg-2k.png');
+	background-position: center;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.active {
+	border-color: var(--main-theme-color-2);
+	.title,
+	.desc,
+	.meta {
+		color: #ffffff;
+	}
+}
+
+.title {
+	font-size: 24px;
+	font-weight: 400;
+	margin-bottom: 8px;
+	color: #ffffffaf;
+}
+
+.desc,
+.meta {
+	font-size: 16px;
+	color: #ffffffaf;
+}

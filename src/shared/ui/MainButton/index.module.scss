@@ -1,0 +1,69 @@
+.mainBtnContainer {
+  padding: 8px 12px;
+  height: 38px;
+  width: auto;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+  font-weight: 400;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s;
+  &__primary {
+    background-color: var(--main-theme-color);
+    color: #ffffff;
+    &:hover {
+      background: #c40a14;
+      color: #ffffff;
+    }
+  }
+  &__show {
+    background-color: #F2F1F7;
+    color: #000000;
+    &:hover {
+      background: #F2F1F7;
+      color: #000000;
+    }
+  }
+  &__light {
+    background-color: #FFFFFF;
+    color: #000000;
+    &:hover {
+      background: #cdcbcb;
+      color: #000000;
+    }
+  }
+  /*
+	background-color: ${({ $variant }) => {
+		if ($variant === 'show') return '#F2F1F7'
+		if ($variant === 'light') return '#FFFFFF'
+		return '#DD0A15'
+	}};
+	color: ${({ $variant }) => {
+		if ($variant === 'primary') return '#ffffff'
+		return '#000000'
+	}};
+	&:hover {
+		background-color: ${({ $variant }) => {
+			if ($variant === 'light') return '#cdcbcb'
+			if ($variant === 'show') return '#F2F1F7'
+			return '#c40a14'
+		}};
+		color: ${({ $variant }) => {
+			if ($variant === 'primary') return '#ffffff'
+			return '#000000'
+		}};
+    */
+}
+
+.disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  &:hover {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+}

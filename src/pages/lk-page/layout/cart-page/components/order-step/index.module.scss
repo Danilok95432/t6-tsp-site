@@ -1,0 +1,40 @@
+.step {
+	padding-bottom: 28px;
+	border-bottom: 1px solid rgba(202, 164, 61, 0.18);
+
+	& + & {
+		margin-top: 28px;
+	}
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin-bottom: 20px;
+}
+
+.title {
+	font-family: 'Tinos';
+	margin: 0 0 24px;
+	font-size: 32px;
+	font-weight: 400;
+	color: var(--main-theme-color-2);
+}
+
+.editBtn {
+	margin-bottom: 24px;
+	border: none;
+	background: transparent;
+	color: var(--main-theme-color-2);
+	text-decoration: underline;
+	cursor: pointer;
+	font-size: 20px;
+}
+
+@media (max-width: 768px) {
+	.title {
+		font-size: 24px;
+	}
+}

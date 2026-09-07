@@ -1,0 +1,186 @@
+section.reviewSlider {
+	padding: 48px 0 64px;
+	background: var(--main-theme-color);
+	@media (max-width: 768px) {
+		padding: 0px 0 48px;
+	}
+	.sliderCont {
+		max-width: 1920px;
+		@media (max-width: 768px) {
+			padding: 0;
+		}
+		.sectionRow {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: #000;
+			max-width: 1220px;
+			height: 391px;
+			margin: 0 auto;
+			background-image: url('src/assets/img/review-slider-2k.png');
+			background-position: center;
+			background-repeat: no-repeat;
+			@media (max-width: 1920px) {
+				max-width: 100%;
+				height: 457px;
+				background-image: url('src/assets/img/review-slider-bg.png');
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+      @media (max-width: 768px) {
+				height: max-content;
+        padding: 32px 0;
+        background-size: auto 100%;
+			}
+			.sliderMain {
+				max-width: 730px;
+				margin: 0 auto;
+				position: relative;
+				:global {
+					.swiper-pagination {
+						position: static;
+						margin-top: 16px;
+						display: flex;
+						justify-content: center;
+						gap: 16px;
+            display: none;
+            @media (max-width: 768px) {
+              display: flex;
+              margin-top: 0px;
+            }
+					}
+
+					.swiper-pagination-bullet {
+						width: 7px;
+						height: 7px;
+						border-radius: 999px;
+						opacity: 1;
+						background: rgba(255, 255, 255, 0.35);
+						transition:
+							transform 0.2s ease,
+							background 0.2s ease;
+					}
+
+					.swiper-pagination-bullet-active {
+						background: var(--main-theme-color-2);
+					}
+				}
+				.slideRow {
+					@media (max-width: 768px) {
+						margin: 0 24px 24px 24px;
+					}
+					max-width: 730px;
+					min-height: 262px;
+					position: relative;
+					overflow: hidden;
+
+					border-radius: 18px;
+					padding: 34px 44px;
+
+					// база стекла (refraction ~100 => сильнее blur/saturate)
+					background: rgba(8, 8, 8, 0.38);
+					backdrop-filter: blur(22px) saturate(155%) contrast(112%);
+					-webkit-backdrop-filter: blur(22px) saturate(155%) contrast(112%);
+
+					// тонкая светлая окантовка + очень мягкий золотой подтон
+					border: 1px solid rgba(255, 255, 255, 0.12);
+					box-shadow:
+						0 18px 60px rgba(0, 0, 0, 0.55),
+						inset 0 1px 0 rgba(255, 255, 255, 0.07),
+						inset 0 0 0 1px rgba(215, 170, 70, 0.1);
+
+					transform: translateZ(0);
+
+					// Light angle -45° (блик идёт с верх-лево -> низ-право), но intensity 0% => очень деликатно
+					&::before {
+						content: '';
+						position: absolute;
+						inset: 0;
+						pointer-events: none;
+
+						background: linear-gradient(
+							to bottom right,
+							rgba(255, 255, 255, 0.1) 0%,
+							rgba(255, 255, 255, 0.04) 35%,
+							rgba(255, 255, 255, 0) 70%
+						);
+						opacity: 0.55;
+					}
+
+					// Dispersion ~22 + Frost ~10: лёгкая цветная дисперсия + мягкое "зерно"
+					&::after {
+						content: '';
+						position: absolute;
+						inset: 0;
+						pointer-events: none;
+
+						background:
+      // дисперсия (очень тонко!)
+							linear-gradient(
+								90deg,
+								rgba(255, 80, 180, 0.05) 0%,
+								rgba(255, 255, 255, 0) 35%,
+								rgba(80, 180, 255, 0.05) 100%
+							),
+							// объём/глубина (Depth ~1)
+							radial-gradient(
+									700px 240px at 18% 22%,
+									rgba(255, 255, 255, 0.08),
+									rgba(255, 255, 255, 0) 60%
+								),
+							// frost (зерно)
+							radial-gradient(
+									circle at 1px 1px,
+									rgba(255, 255, 255, 0.03) 1px,
+									rgba(255, 255, 255, 0) 1.6px
+								);
+
+						background-size:
+							100% 100%,
+							100% 100%,
+							7px 7px;
+
+						mix-blend-mode: screen;
+						filter: blur(10px);
+						opacity: 0.22;
+					}
+
+					.contentSlide {
+						position: relative;
+						z-index: 1;
+
+						flex-direction: column;
+						gap: 14px;
+
+						.slideTitle {
+							font-size: 22px;
+							font-weight: 600;
+							color: #fff;
+
+							span {
+								margin-left: 8px;
+								color: var(--main-theme-color-2);
+								opacity: 0.9;
+								font-weight: 500;
+							}
+						}
+
+						.slideDesc {
+							font-size: 16px;
+							line-height: 1.45;
+							color: rgba(255, 255, 255, 0.86);
+							max-width: 980px;
+						}
+					}
+				}
+			}
+			.sliderBtns {
+				top: 50%;
+				width: calc(730px + 128px);
+				@media (max-width: 885px) {
+					display: none;
+				}
+			}
+		}
+	}
+}

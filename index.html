@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/x-icon" href="src/assets/img/favicon.png" />
+		<title>ТСП</title>
+		<script>
+			// Функция для обновления title
+			async function updateTitleFromSettings() {
+				try {
+					const response = await fetch('https://tspapi.hayecke.org/sitesettings/getinfo')
+					const data = await response.json()
+
+					// Проверяем наличие поля title
+					if (data && data.site_title) {
+						document.title = data.site_title
+					}
+				} catch (error) {
+					console.error('Ошибка при загрузке настроек:', error)
+					// Если ошибка - оставляем исходный title
+				}
+			}
+
+			// Запускаем обновление после загрузки страницы
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', updateTitleFromSettings)
+			} else {
+				// DOM уже загружен
+				updateTitleFromSettings()
+			}
+		</script>
+	</head>
+	<body>
+		<div id="modal-root"></div>
+		<div id="root"></div>
+		<script type="module" src="/src/main.tsx"></script>
+	</body>
+</html>

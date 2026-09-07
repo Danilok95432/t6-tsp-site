@@ -1,0 +1,11 @@
+.section {
+  padding: 25px 0;
+  width: 100%;
+  h2 {
+    font-size: 28px;
+    font-weight: 500;
+  }
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+}

@@ -1,0 +1,76 @@
+$white: #ffffff;
+$black: #000000;
+
+@mixin montserrat-regular {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+}
+
+@mixin opensans-light {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+@mixin opensans-regular {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+}
+
+@mixin opensans-medium {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 500;
+}
+
+@mixin opensans-semi {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+}
+
+@mixin opensans-bold {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+}
+
+@mixin ptsans-regular {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+}
+
+@mixin ptsans-bold {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700;
+}
+
+@mixin ptsans-italic {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+	font-style: italic;
+}
+
+:root {
+	--color-white: #ffffff;
+	--color-white-01: #f2f1f7;
+	--color-black: #000000;
+	--color-gray: #e1e1e1;
+	--color-gray-01: #818182;
+	--color-gray-02: #626262;
+	--color-gray-03: #acacac;
+	--color-gray-04: #8d8d8d;
+	--color-gray-05: #9d9d9d;
+	--color-red: #dd0a15;
+	--color-red-01: #c40a14;
+
+	--main-theme-color: #000000;
+	--main-theme-color-2: #C09F3D;
+	--additional-theme-color: #FFFFFF;
+	--additional-theme-color-2: #000000;
+	--main-link-color: #0077CC;
+	--main-text-color: #0077CC;
+	--main-slider-bg: #CAE5F0;
+	--main-slider-text: #FFFFFF;
+
+	--box-shadow: 0 0 20px 0 rgb(167 0 43 / 0.5);
+	--border-radius: 5px;
+
+	--transition-duration: 0.2s;
+}

@@ -1,0 +1,209 @@
+@import 'src/assets/styles/vars';
+
+.selectWrapper {
+	flex-grow: 1;
+	label {
+		font-size: 18px;
+		font-weight: 500;
+		display: block;
+		font-family: 'Open Sans', sans-serif;
+		margin-bottom: 7px;
+		color: #fff;
+		.reqStar {
+			color: #01a7b4;
+			margin-left: 4px;
+			font-weight: 600;
+			font-size: 14px;
+		}
+	}
+
+	.disabled {
+		background-color: #afafaf6c;
+		outline: 1px solid #afafaf;
+		background-blend-mode: luminosity;
+	}
+
+	.selectSearchInput {
+		width: 100%;
+		border: none;
+		outline: none;
+		background: transparent;
+		font: inherit;
+		color: inherit;
+		padding: 0;
+	}
+
+	:global {
+		.react-dropdown-select {
+			@include opensans-regular;
+			font-size: 18px;
+			padding: 16px;
+			width: 100%;
+			background-color: transparent;
+			color: #fff;
+			outline: 1px solid #ffffff4d;
+			border: none;
+			border-radius: 8px;
+			.react-dropdown-select-input {
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 400;
+				font-size: 18px;
+				color: #fff;
+			}
+			input {
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 400;
+				font-size: 18px;
+				color: #fff;
+				width: 100%;
+				height: 100%;
+				background: transparent;
+				border: none;
+				&:focus-visible {
+					outline: none;
+				}
+			}
+			&::placeholder {
+				color: #868686;
+			}
+
+			&:disabled {
+				background-color: rgba(#000000, 0.1);
+			}
+			&:focus,
+			&:focus-within {
+				border: 1px solid var(--main-theme-color-2);
+			}
+		}
+
+		.react-dropdown-select-dropdown {
+			background: #000;
+			border: 1px solid #ffffff4d;
+			color: var(--main-theme-color-2);
+			border-radius: 8px;
+			&::-webkit-scrollbar {
+				width: 2px;
+			}
+
+			&::-webkit-scrollbar-track {
+				background: transparent;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background-color: var(--main-theme-color-2);
+			}
+
+			&::-webkit-scrollbar-thumb:hover {
+				background-color: rgba(192, 159, 61, 0.18);
+			}
+			input {
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 400;
+				font-size: 18px;
+				color: #fff;
+			}
+			.react-dropdown-select-item {
+				border-bottom: none;
+				padding: 8px 16px;
+				font-size: 18px;
+				color: #fff;
+				transition: all 0.2s ease-in-out;
+				margin: 8px 8px 0 8px;
+				border-radius: 4px;
+				&:last-child {
+					margin: 8px 8px 8px 8px;
+				}
+				&:hover {
+					color: var(--main-theme-color-2);
+					background-color: #c09f3d33;
+				}
+			}
+			.react-dropdown-select-item-selected {
+				position: relative;
+				background: transparent;
+				color: var(--main-theme-color-2);
+				&::after {
+					content: '';
+					position: absolute;
+					top: 50%;
+					right: 12px;
+					width: 18px;
+					height: 19px;
+					transform: translateY(-50%);
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: contain;
+					background-image: url("data:image/svg+xml,%3Csvg width='19' height='20' viewBox='0 0 19 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 8.44072C1.91454 10.1228 4.44419 16.161 4.78949 19.231L5.15919 19.253C7.51381 13.3437 12.3774 5.36255 18.5135 0.346207L18.3071 0C12.3785 3.70903 8.13318 8.97414 5.33571 13.4746C4.39092 11.9117 1.78628 8.85556 0.20959 8.05783L0 8.44072Z' fill='%23C09F3D'/%3E%3C/svg%3E%0A");
+				}
+			}
+			.react-dropdown-select-no-data {
+				color: var(--main-theme-color-2);
+			}
+		}
+
+		.react-dropdown-select-dropdown-handle {
+			background-image: url("data:image/svg+xml,%3Csvg width='18' height='10' viewBox='0 0 18 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.7493 9.81C16.6507 9.81103 16.5529 9.79207 16.4618 9.75426C16.3707 9.71645 16.2882 9.66057 16.2193 9.59L8.74934 2.12L1.27934 9.59C1.13872 9.73045 0.948095 9.80934 0.749344 9.80934C0.550593 9.80934 0.35997 9.73045 0.219345 9.59C0.0788946 9.44938 0 9.25875 0 9.06C0 8.86125 0.0788946 8.67062 0.219345 8.53L8.74934 0L17.2793 8.53C17.4198 8.67062 17.4987 8.86125 17.4987 9.06C17.4987 9.25875 17.4198 9.44938 17.2793 9.59C17.2101 9.66011 17.1276 9.71569 17.0365 9.75347C16.9455 9.79124 16.8479 9.81046 16.7493 9.81Z' fill='%23C09F3D'/%3E%3C/svg%3E%0A");
+			background-repeat: no-repeat;
+			width: 18px;
+			height: 10px;
+			margin: 0;
+			transition: all 0.3s ease-in-out;
+
+			svg {
+				display: none;
+			}
+		}
+	}
+}
+
+.selectHugeWrapper {
+	flex-grow: 1;
+	label {
+		font-size: 20px;
+		font-weight: 600;
+		display: block;
+		font-family: 'Open Sans', sans-serif;
+		margin-bottom: 5px;
+		color: #fff;
+		.reqStar {
+			color: #01a7b4;
+			margin-left: 4px;
+			font-weight: 600;
+			font-size: 20px;
+		}
+	}
+
+	:global {
+		.react-dropdown-select {
+			outline: 1px solid #afafaf;
+			border: none;
+			border-radius: 3px;
+			padding: 2px 10px;
+			min-height: 35px;
+			@include opensans-regular;
+			font-size: 20px;
+			&:focus,
+			&:focus-within {
+				box-shadow: 0 0 0 1px rgba(#184f71, 1);
+			}
+		}
+
+		.react-dropdown-select-dropdown-handle {
+			background: url('data:image/svg+xml,<svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.38652 0.347656C5.53987 0.347656 5.76998 0.424336 5.84665 0.57769L10.4473 5.17833C10.6773 5.40836 10.6773 5.86842 10.4473 6.17513C10.2173 6.40516 9.75716 6.40516 9.45045 6.17513L5.30986 2.03456L1.16926 6.17513C0.939233 6.40516 0.479226 6.40516 0.172517 6.17513C-0.0575151 5.9451 -0.0575151 5.48503 0.172517 5.17832L4.77315 0.57769C5.00318 0.424335 5.23316 0.347656 5.38652 0.347656Z" fill="black"/></svg>')
+				no-repeat;
+			width: 11px;
+			height: 7px;
+			margin: 0;
+
+			svg {
+				display: none;
+			}
+		}
+	}
+}
+.warningMessage {
+	color: #f00000;
+	font-size: 14px;
+	line-height: 1;
+	padding-top: 5px;
+}

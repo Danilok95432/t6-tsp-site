@@ -1,0 +1,25 @@
+.ratingRow {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	color: var(--main-theme-color-2);
+
+	.star {
+		display: inline-flex;
+	}
+
+	.starSvg {
+		width: 18px;
+		height: 18px;
+		display: block;
+	}
+
+	.starBg {
+		opacity: 0.22;
+	}
+
+	.starFill {
+		opacity: 0.95;
+	}
+}

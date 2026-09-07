@@ -1,0 +1,73 @@
+html {
+	::-webkit-scrollbar-thumb {
+		background-color: var(--scrollbarBg);
+		border-radius: var(--scrollbarWidth);
+	}
+}
+
+body {
+	font-family: var(--font-family-base);
+	color: var(--text-01);
+	background-color: var(--base-01);
+	font-size: 12px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-weight: 600;
+}
+
+a,
+button,
+label,
+textarea,
+input,
+select,
+svg * {
+	transition-duration: var(--transition-duration);
+}
+
+input[type='radio'] {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: var(--base-01);
+
+	&.active {
+		font-weight: 700;
+	}
+}
+
+button {
+	border: none;
+	padding: 0;
+}
+
+fieldset {
+	border: none;
+	padding: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.app {
+	width: 100dvw;
+	height: 100dvh;
+	overflow-x: auto;
+	overflow-y: hidden;
+
+	&::-webkit-scrollbar {
+		height: 10px;
+	}
+}

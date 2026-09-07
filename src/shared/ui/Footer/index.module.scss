@@ -1,0 +1,274 @@
+.footer {
+	width: 100%;
+	margin-top: auto;
+	padding: 48px 0 72px;
+
+	color: #ffffff;
+	background: #171717;
+	border-radius: 24px 24px 0 0;
+}
+
+.cont {
+	max-width: 1236px;
+	margin: 0 auto;
+}
+
+.top {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 48px;
+}
+
+.info {
+	flex-shrink: 0;
+	max-width: 565px;
+}
+
+.company {
+	margin-bottom: 18px;
+
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 32px;
+}
+
+.privacy {
+	display: inline-block;
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+
+	color: #ffffff;
+	text-decoration: none;
+
+	transition: opacity 0.3s ease-in-out;
+
+	&:hover {
+		opacity: 1;
+		color: #4e51ff;
+		text-decoration: underline;
+	}
+}
+
+.navigation {
+	display: flex;
+	gap: 100px;
+}
+
+.navColumn {
+	display: flex;
+	flex-direction: column;
+	gap: 17px;
+
+	.link {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+
+		color: #ffffff;
+		text-decoration: none;
+
+		transition: all 0.2s ease;
+
+		&:hover {
+			opacity: 1;
+			color: #4e51ff;
+			text-decoration: underline;
+		}
+	}
+}
+
+.requestButton {
+	flex-shrink: 0;
+
+	min-width: 169px;
+	height: 52px;
+	padding: 0 32px;
+
+	border: 0;
+	border-radius: 3px;
+
+	font-family: inherit;
+	font-size: 18px;
+	line-height: 28px;
+	font-weight: 600;
+
+	color: #ffffff;
+	background: #3524a2;
+
+	cursor: pointer;
+
+	transition:
+		background-color 0.3s ease,
+		transform 0.3s ease;
+
+	&:hover {
+		background: #4e51ff;
+	}
+
+	&:active {
+		transform: translateY(1px);
+	}
+}
+
+.divider {
+	width: 100%;
+	height: 1px;
+	margin: 37px 0 25px;
+
+	background: #484848;
+}
+
+.bottom {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 30px;
+}
+
+.copyright {
+	flex-shrink: 0;
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+
+	color: #ffffff;
+}
+
+.contacts {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.contact,
+.contactMail {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+
+	color: #ffffff;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.contactMail {
+	color: #8370FF;
+}
+
+.icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 14px;
+	height: 14px;
+	flex-shrink: 0;
+
+	svg {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@media (max-width: 1024px) {
+	.cont {
+		max-width: none;
+	}
+
+	.info {
+		width: auto;
+	}
+
+	.navigation {
+		gap: 50px;
+	}
+}
+
+@media (max-width: 850px) {
+	.top {
+		flex-wrap: wrap;
+	}
+
+	.info {
+		width: 100%;
+	}
+
+	.navigation {
+		flex: 1;
+		justify-content: flex-start;
+	}
+
+	.bottom {
+		align-items: flex-start;
+	}
+
+	.contacts {
+		flex-wrap: wrap;
+		justify-content: flex-end;
+	}
+}
+
+@media (max-width: 650px) {
+	.footer {
+		padding: 30px 0;
+		border-radius: 12px 12px 0 0;
+	}
+
+	.top {
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	.company {
+		margin-bottom: 12px;
+		font-size: 17px;
+	}
+
+	.navigation {
+		width: 100%;
+		justify-content: space-between;
+		gap: 30px;
+	}
+
+	.navColumn {
+		width: calc(50% - 15px);
+		gap: 14px;
+		.link {
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
+
+	.requestButton {
+		width: 100%;
+	}
+
+	.divider {
+		margin: 30px 0 24px;
+	}
+
+	.bottom {
+		flex-direction: column-reverse;
+		gap: 24px;
+	}
+
+	.contacts {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 14px;
+	}
+
+	.copyright {
+		font-size: 10px;
+	}
+}
+

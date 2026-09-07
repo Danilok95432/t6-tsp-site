@@ -1,0 +1,10 @@
+.flexRowContainer {
+  display: flex;
+  margin: 0;
+  gap: 20px;
+  max-width: 100%;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
+}

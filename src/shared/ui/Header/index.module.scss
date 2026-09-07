@@ -1,0 +1,111 @@
+.header {
+	width: 100%;
+	background: #ffffff;
+}
+
+.headerCont {
+	width: 100%;
+}
+
+.headerRow {
+	display: flex;
+	align-items: center;
+	gap: 70px;
+
+	min-height: 86px;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 108px;
+	flex-shrink: 0;
+	padding: 0;
+
+	border: 0;
+	background: transparent;
+
+	cursor: pointer;
+
+	svg {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+
+.phone {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+
+	color: #171717;
+	text-decoration: none;
+	white-space: nowrap;
+
+	svg {
+		width: 24px;
+		height: 24px;
+		flex-shrink: 0;
+	}
+}
+
+.requestButton {
+	flex-shrink: 0;
+
+	min-width: 169px;
+	height: 52px;
+	padding: 0 32px;
+
+	border: 0;
+	border-radius: 3px;
+
+	font-family: inherit;
+	font-size: 18px;
+	line-height: 28px;
+	font-weight: 600;
+
+	color: #ffffff;
+	background: #3524a2;
+
+	cursor: pointer;
+
+	transition:
+		background-color 0.3s ease,
+		transform 0.3s ease;
+
+	&:hover {
+		background: #4e51ff;
+	}
+
+	&:active {
+		transform: translateY(1px);
+	}
+}
+
+@media (max-width: 1100px) {
+	.logo {
+		margin-right: 28px;
+	}
+
+	.requestButton {
+		margin-left: 25px;
+	}
+}
+
+@media (max-width: 900px) {
+	.phone,
+	.requestButton {
+		display: none;
+	}
+
+	.logo {
+		margin-right: auto;
+	}
+}

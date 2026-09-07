@@ -1,0 +1,142 @@
+section.awards {
+	background: var(--main-theme-color);
+	padding: 32px 0 48px;
+	@media (max-width: 768px) {
+		padding: 0;
+	}
+	.sliderBtns {
+		top: 40%;
+		width: calc(1220px + 128px);
+		@media (max-width: 1360px) {
+			top: 45%;
+			width: 80%;
+			display: none;
+		}
+		@media (max-width: 768px) {
+			display: flex;
+		}
+		@media (max-width: 590px) {
+			top: 45%;
+			width: calc(100% + 6px);
+		}
+		@media (max-width: 500px) {
+			top: 45%;
+			width: calc(100% + 6px);
+		}
+		@media (max-width: 440px) {
+			top: 45%;
+			width: calc(100% + 6px);
+		}
+	}
+	:global {
+		.swiper-pagination {
+			position: static;
+			margin-top: 16px;
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+		}
+
+		.swiper-pagination-bullet {
+			width: 7px;
+			height: 7px;
+			border-radius: 999px;
+			opacity: 1;
+			background: rgba(255, 255, 255, 0.35);
+			transition:
+				transform 0.2s ease,
+				background 0.2s ease;
+		}
+
+		.swiper-pagination-bullet-active {
+			background: var(--main-theme-color-2);
+			transform: scale(1.15);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.awardsEl {
+			width: 100%;
+		}
+	}
+	.awardsRow {
+		width: 100%;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: center;
+		gap: 24px;
+		.awardsEl {
+			width: 100%;
+			gap: 16px;
+			flex-wrap: nowrap;
+			padding: 24px 0;
+			@media (max-width: 768px) {
+				width: 100%;
+				max-width: 320px;
+				margin: 0 auto;
+			}
+			.infoRowSilver {
+				flex-direction: column;
+				gap: 0;
+				.title {
+					font-size: 16px;
+					font-family: 'PT Sans';
+					color: #9e958a;
+					font-weight: 600;
+					margin-bottom: 4px;
+				}
+				.desc {
+					font-size: 16px;
+					font-family: 'PT Sans';
+					font-weight: 600;
+					color: #fff;
+					margin-bottom: 8px;
+					a {
+						font-size: 16px;
+						font-family: 'PT Sans';
+						font-weight: 600;
+						color: #fff;
+						text-decoration: underline 1px solid #fff;
+					}
+				}
+				.location {
+					font-size: 14px;
+					font-family: 'PT Sans';
+					font-weight: 400;
+					color: #fff;
+				}
+			}
+			.infoRow {
+				flex-direction: column;
+				gap: 0;
+				.title {
+					font-size: 16px;
+					font-family: 'PT Sans';
+					color: var(--main-theme-color-2);
+					font-weight: 600;
+					margin-bottom: 4px;
+				}
+				.desc {
+					font-size: 16px;
+					font-family: 'PT Sans';
+					font-weight: 600;
+					color: #fff;
+					margin-bottom: 8px;
+					a {
+						font-size: 16px;
+						font-family: 'PT Sans';
+						font-weight: 600;
+						color: #fff;
+						text-decoration: underline 1px solid #fff;
+					}
+				}
+				.location {
+					font-size: 14px;
+					font-family: 'PT Sans';
+					font-weight: 400;
+					color: #fff;
+				}
+			}
+		}
+	}
+}

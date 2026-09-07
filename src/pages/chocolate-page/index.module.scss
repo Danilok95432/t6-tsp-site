@@ -1,0 +1,28 @@
+section.chocolatePage {
+	position: relative;
+	background: var(--main-theme-color);
+	padding: 48px 0 72px;
+	@media (max-width: 768px) {
+		padding: 16px 0 16px;
+	}
+	.cont {
+		@media (max-width: 768px) {
+			padding: 24px 24px 16px 24px;
+		}
+	}
+	.headRow {
+		position: relative;
+		justify-content: center;
+		align-items: center;
+		z-index: 1;
+		.title {
+			color: var(--main-theme-color-2);
+			font-size: 48px;
+			text-align: center;
+			font-family: 'Tinos';
+			@media (max-width: 768px) {
+				font-size: 32px;
+			}
+		}
+	}
+}

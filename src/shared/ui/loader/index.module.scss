@@ -1,0 +1,14 @@
+.loader{
+  margin: 0 auto;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+  display: inline-block;
+  vertical-align: top;
+  svg path,
+  svg rect{
+    fill: var(--main-theme-color-2);
+  }
+}
+

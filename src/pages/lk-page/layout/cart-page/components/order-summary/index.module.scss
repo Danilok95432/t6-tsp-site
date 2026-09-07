@@ -1,0 +1,42 @@
+.card {
+	padding: 32px;
+	border-radius: 32px;
+	border: 1px solid #c09f3d6b;
+	background-image: url('src/assets/img/slider-bg-2k.png');
+	color: #ffffff;
+}
+
+.row,
+.totalRow {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	color: var(--main-theme-color-2);
+	font-family: 'Tinos';
+}
+
+.row {
+	font-size: 24px;
+
+	p {
+		font-size: 24px;
+		color: #fff;
+	}
+}
+
+.divider {
+	height: 1px;
+	margin: 18px 0;
+	background: #c09f3d6b;
+}
+
+.totalRow {
+	span {
+		font-size: 24px;
+	}
+	p {
+		font-size: 28px;
+		color: #fff;
+	}
+}

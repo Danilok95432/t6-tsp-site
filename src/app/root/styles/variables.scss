@@ -1,0 +1,44 @@
+:root {
+	--text-01: #191c30;
+	--text-02: rgba(25, 28, 48, 0.6);
+	--text-03: rgba(25, 28, 48, 0.3);
+	--text-warning: #eb8d01;
+	--base-01: #ffffff;
+	--text-02-alt: rgba(255, 255, 255, 0.8);
+	--link: #0d36cc;
+	--link-hover: #4062de;
+	--neutral: #526ed3;
+	--negative: #cf4519;
+	--positive: #106f01;
+	--positive-02: #39ab82;
+	--positive-bg: rgba(74, 201, 155, 0.1);
+	--negative-bg: rgba(244, 87, 37, 0.1);
+	--warning-bg: rgba(255, 199, 0, 0.1);
+	--neural-bg: rgba(25, 28, 48, 0.06);
+
+	--base-02: #211c84;
+	--base-03: #4d55cc;
+	--base-04: #e0e0e0;
+	--base-05: #ececec;
+	--base-06: #f6f6f6;
+
+	--support-01: rgba(218, 203, 255, 0.8);
+	--base-info-bg: rgba(218, 203, 255, 0.3);
+	--base-input-bg: rgba(25, 28, 48, 0.02);
+
+	--base-border: #e1e1e1;
+
+	--header-height: 50px;
+	--border: 1px solid var(--base-border);
+	--border-radius: 3px;
+
+	--font-family-base: 'OpenSans', sans-serif;
+
+	--transition-duration: 0.2s;
+
+	--scrollbarBg: var(--base-04);
+	// --scrollbarThumb: ;
+	--scrollbarWidth: 8px;
+	// --scrollbarBorder: 3px solid var(--scrollbarBg);
+	--scrollbarBorderRadius: calc(var(--scrollbarWidth) / 2);
+}

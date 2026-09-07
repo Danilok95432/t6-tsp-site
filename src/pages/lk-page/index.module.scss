@@ -1,0 +1,23 @@
+.lkSection {
+  background: var(--main-theme-color);
+	.lkCont {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+		@media (max-width: 1220px) {
+			padding: 0 24px;
+		}
+		.title {
+			font-size: 42px;
+			font-family: 'Tinos';
+			font-weight: 400;
+			margin: 48px 0;
+      color: var(--main-theme-color-2);
+		}
+    .link {
+      color: var(--main-theme-color-2);
+    }
+	}
+}

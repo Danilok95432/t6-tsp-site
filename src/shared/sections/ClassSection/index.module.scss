@@ -1,0 +1,78 @@
+section.class {
+	background: var(--main-theme-color);
+	padding: 32px 0 48px;
+	@media (max-width: 768px) {
+		padding: 0px 0 16px;
+	}
+	.classCont {
+		@media (max-width: 768px) {
+			padding: 0 24px;
+		}
+	}
+	.headRow {
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		margin-bottom: 48px;
+		@media (max-width: 768px) {
+			margin-bottom: 16px;
+		}
+		h2 {
+			color: var(--main-theme-color-2);
+			font-size: 48px;
+			font-family: 'Tinos';
+			font-weight: 400;
+			@media (max-width: 768px) {
+				font-size: 32px;
+			}
+		}
+	}
+	.classRow {
+		flex-wrap: nowrap;
+		gap: 24px;
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		@media (max-width: 1260px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width: 768px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+		.classEl {
+			display: flex;
+			justify-content: center;
+			height: 160px;
+			align-items: center;
+			padding: 48px 32px;
+			border-radius: 16px;
+			border: 1px solid #c09f3d6b;
+			background-image: url('src/assets/img/slider-bg-2k.png');
+			background-position: center;
+			background-repeat: no-repeat;
+			@media (max-width: 768px) {
+				width: 60%;
+				margin: 0 auto;
+			}
+			@media (max-width: 540px) {
+				width: 100%;
+			}
+			&:first-child {
+				padding: 32px;
+			}
+			p {
+				text-align: center;
+				font-size: 26px;
+				font-family: 'Tinos';
+				font-weight: 400;
+				color: #fff;
+				@media (max-width: 768px) {
+					font-size: 22px;
+				}
+			}
+		}
+		.classEl:last-child {
+			padding: 32px;
+		}
+	}
+}

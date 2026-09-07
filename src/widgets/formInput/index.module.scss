@@ -1,0 +1,197 @@
+.inputContainer {
+  position: relative;
+  margin-bottom: 15px;
+  width: 100%;
+  @media (max-width: 768px) {
+    margin-bottom: 0px;
+  }
+}
+
+.inputWrapper {
+  position: relative;
+  border: 1px solid #C5C5C5;
+  padding: 8px 0;
+  border-radius: 5px;
+  @media (max-width: 768px) {
+    min-height: 50px;
+  }
+
+  .sendCodeBtn {
+    position: absolute;
+    right: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    height: 30px;
+    padding: 7px 12px;
+    @media (max-width: 768px) {
+      left: 0px;
+      top: 85px;
+      right: unset;
+    }
+    @media (max-width: 459px) {
+      left: 0px;
+      top: 105px;
+      right: unset;
+    }
+    &:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+  }
+
+  .resend {
+    font-size: 14px;
+    color: #000;
+  }
+
+  .codeAccepted {
+    background: green;
+    color: #fff;
+  }
+
+  &.focused {
+    border-color: #000;
+
+    .label {
+      color: #000;
+    }
+  }
+
+  &.error {
+    border-color: #d32f2f;
+    border-width: 2px;
+    .label {
+      color: #d32f2f;
+    }
+  }
+  &.disabled {
+    border-color: #EDEDEF;
+    .label {
+      color: #C4C4C4;
+    }
+  }
+  &.accept {
+    border-color: green;
+    border-width: 2px;
+    .label {
+      color: #000;
+    }
+  }
+}
+
+.selectOptions {
+  position: absolute;
+  top: 57px;
+  left: 0;
+  width: 100%;
+  max-height: 250px;
+  background: #ffffff;
+  border: 1px solid #C5C5C5;
+  border-radius: 5px;
+  overflow-y: scroll;
+  z-index: 1;
+  .option {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    &:hover {
+      background: #d32f2f;
+      color: #fff;
+    }
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 12px 10px 0 10px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: transparent;
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.label {
+  position: absolute;
+  left: 10px;
+  top: 16px;
+  color: #00000096;
+  font-size: 16px;
+  transition: all 0.2s ease-out;
+  pointer-events: none;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+
+  &.raised {
+    top: 2px;
+    font-size: 12px;
+    color: #00000096;
+  }
+  &.smallLable {
+    font-size: 12px;
+    @media (max-width: 440px) {
+      font-size: 10px;
+    }
+  }
+}
+
+.errorMessage {
+  color: #d32f2f;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.toggleButtonHide {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #1976d2;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  outline: none;
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.7118 4.22561C20.3959 3.9248 19.8652 3.9248 19.5493 4.22561L17.3128 6.35533C15.5185 5.39274 13.7369 4.88738 11.9931 4.88738C6.23122 4.88738 1.7076 10.2177 1.11372 11.2044C0.962093 11.445 0.962093 11.7458 1.11372 11.9865C1.64443 12.8528 3.66615 15.1389 6.45866 16.7031L4.39903 18.6644C4.08313 18.9652 4.08313 19.4706 4.39903 19.7714C4.56329 19.9278 4.76547 20 4.98027 20C5.19508 20 5.39725 19.9278 5.56152 19.7714L20.7118 5.33258C21.0277 5.03177 21.0277 4.52641 20.7118 4.22561ZM2.81955 11.5894C3.8936 10.2297 7.58325 6.45159 12.0058 6.45159C13.3199 6.45159 14.6972 6.82459 16.0998 7.52247L14.6846 8.87009C13.977 8.19628 13.0166 7.78718 11.9931 7.78718C9.8956 7.78718 8.17713 9.41154 8.17713 11.4209C8.17713 12.3956 8.60675 13.31 9.31435 13.9838L7.64643 15.5721C5.32144 14.3689 3.52716 12.54 2.80692 11.6135L2.81955 11.5894ZM10.4895 12.8648C10.0851 12.4798 9.83242 11.9744 9.83242 11.4089C9.83242 10.2658 10.8054 9.33935 12.0058 9.33935C12.5997 9.33935 13.1304 9.58 13.5347 9.96503L10.4895 12.8648Z' fill='black' fill-opacity='0.55'/%3E%3Cpath d='M22.8863 11.1915C22.5451 10.638 21.6227 9.5551 20.3844 8.48422C20.0559 8.19545 19.5252 8.21951 19.2219 8.53235C18.9186 8.85723 18.9439 9.35055 19.2724 9.63933C20.1443 10.3974 20.8014 11.1073 21.1678 11.5886C20.0811 12.9482 16.4041 16.7264 11.9816 16.7264C11.691 16.7264 11.4003 16.7143 11.1097 16.6782C10.6675 16.6301 10.2505 16.9309 10.1999 17.3641C10.1494 17.7973 10.4653 18.1823 10.9202 18.2304C11.274 18.2665 11.6278 18.2906 11.9942 18.2906C17.7688 18.2906 22.2924 12.9603 22.8863 11.9736C23.0379 11.733 23.0379 11.4321 22.8863 11.1915Z' fill='black' fill-opacity='0.55'/%3E%3C/svg%3E%0A");
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.toogleButtonShow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #1976d2;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  outline: none;
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.8737 11.5919C22.2801 10.5623 17.7589 5 11.9874 5C6.21584 5 1.70723 10.5623 1.11366 11.5919C0.962113 11.8431 0.962113 12.157 1.11366 12.4081C1.70723 13.4377 6.22847 19 12 19C17.7715 19 22.2928 13.4377 22.8863 12.4081C23.0379 12.157 23.0379 11.8431 22.8863 11.5919H22.8737ZM11.9874 17.3677C7.56716 17.3677 3.89208 13.4251 2.80597 12.0063C3.89208 10.5874 7.56716 6.64484 11.9874 6.64484C16.4076 6.64484 20.0827 10.5874 21.1688 12.0063C20.0827 13.4251 16.4076 17.3677 11.9874 17.3677Z' fill='black' fill-opacity='0.55'/%3E%3Cpath d='M11.9898 8.01443C9.89335 8.01443 8.17578 9.7095 8.17578 11.8064C8.17578 13.9032 9.88072 15.5983 11.9898 15.5983C14.0989 15.5983 15.8038 13.9032 15.8038 11.8064C15.8038 9.7095 14.0989 8.01443 11.9898 8.01443ZM11.9898 13.966C10.79 13.966 9.81757 12.9992 9.81757 11.8064C9.81757 10.6135 10.79 9.64672 11.9898 9.64672C13.1896 9.64672 14.162 10.6135 14.162 11.8064C14.162 12.9992 13.1896 13.966 11.9898 13.966Z' fill='black' fill-opacity='0.55'/%3E%3C/svg%3E%0A");
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,116 @@
+.regSection {
+	background: var(--main-theme-color);
+	.regCont {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		gap: 0;
+		align-items: center;
+		@media (max-width: 1220px) {
+			padding: 0 24px;
+		}
+		@media (max-width: 768px) {
+			padding: 0;
+		}
+		.title {
+			font-size: 42px;
+			font-family: 'Tinos';
+			font-weight: 400;
+			margin: 48px 0;
+			color: var(--main-theme-color-2);
+		}
+		.link {
+			color: var(--main-theme-color-2);
+			font-family: 'Tinos';
+			font-size: 20px;
+			border: 1px solid var(--main-theme-color-2);
+			padding: 16px 32px;
+			width: 100%;
+			text-align: center;
+			border-radius: 4px;
+			margin: 24px 0;
+			@media (max-width: 768px) {
+				margin: 8px 0;
+			}
+		}
+		.form {
+			max-width: 600px;
+			width: 100%;
+			.inputRow {
+				width: 100%;
+				flex-direction: column;
+				gap: 8px;
+				.input {
+					width: 100%;
+				}
+				a {
+					color: var(--main-theme-color-2);
+					font-size: 18px;
+				}
+			}
+			.contolsBlock {
+				justify-content: center;
+				align-items: center;
+				gap: 0;
+			}
+			.controlsWrapper {
+				width: 100%;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				margin-top: 32px;
+				@media (max-width: 768px) {
+					flex-direction: column;
+				}
+				.controls {
+					width: 100%;
+					flex-direction: column;
+					gap: 24px;
+					align-items: center;
+					@media (max-width: 768px) {
+						flex-direction: column-reverse;
+					}
+					.socialsRow {
+						width: 100%;
+						flex-wrap: nowrap;
+						justify-content: space-between;
+						gap: 16px;
+						align-items: center;
+						@media (max-width: 768px) {
+							flex-wrap: wrap;
+						}
+						.enterSocials {
+							font-size: 20px;
+							font-family: 'Tinos';
+							padding: 12.5px 32px;
+							border-radius: 4px;
+							background: #000;
+							border: 1px solid var(--main-theme-color-2);
+							color: var(--main-theme-color-2);
+							width: 50%;
+							height: auto;
+							display: flex;
+							gap: 8px;
+							@media (max-width: 768px) {
+								width: 100%;
+							}
+						}
+					}
+					.enterBtn {
+						font-size: 20px;
+						font-family: 'Tinos';
+						padding: 16px 32px;
+						border-radius: 4px;
+						background: var(--main-theme-color-2);
+						color: #000;
+						width: 100%;
+						height: auto;
+						@media (max-width: 768px) {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

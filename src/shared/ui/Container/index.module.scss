@@ -1,0 +1,16 @@
+.container {
+  max-width: 1236px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  @media (max-width: 768px) {
+    padding: 24px 24px 24px 24px;
+  }
+}
+
+.offCont {
+  max-width: max-content;
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+}
