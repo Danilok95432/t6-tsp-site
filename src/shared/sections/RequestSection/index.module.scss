@@ -1,0 +1,303 @@
+.requestSection {
+	padding: 38px 0;
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 368px;
+	gap: 55px;
+
+	width: 100%;
+	max-width: 778px;
+
+	margin: 0 auto;
+	padding: 38px 14px 38px;
+
+	background: #eeeef7;
+	border-radius: 15px;
+}
+
+.info {
+	padding-top: 1px;
+}
+
+.title {
+	margin: 0 0 22px;
+
+	font-size: 30px;
+	font-weight: 400;
+	line-height: 1.18;
+	letter-spacing: -0.4px;
+
+	color: #1b1b1b;
+}
+
+.description {
+	margin: 0 0 12px;
+
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 1.35;
+
+	color: #292929;
+}
+
+.emailLink {
+	display: flex;
+	align-items: center;
+	gap: 7px;
+
+	width: fit-content;
+
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1;
+
+	color: #3522b4;
+	text-decoration: underline;
+
+	svg {
+		flex-shrink: 0;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+	gap: 9px;
+}
+
+.input,
+.textarea {
+	width: 100%;
+	margin: 0 !important;
+
+	/*
+	 * ControlledInput получает className на внешний wrapper,
+	 * поэтому внутреннее поле стилизуем через descendant.
+	 */
+	input,
+	textarea {
+		width: 100%;
+
+		padding: 0 10px;
+
+		border: 1px solid transparent;
+		border-radius: 2px;
+		outline: none;
+
+		font-family: inherit;
+		font-size: 10px;
+		font-weight: 400;
+
+		color: #222222;
+		background: #ffffff;
+
+		transition: border-color 0.2s ease;
+
+		&::placeholder {
+			color: #929292;
+		}
+
+		&:focus {
+			border-color: #7c6be5;
+		}
+	}
+
+	input {
+		height: 35px;
+	}
+
+	textarea {
+		padding-top: 11px;
+		padding-bottom: 11px;
+
+		resize: none;
+	}
+}
+
+.contactsRow {
+	display: grid;
+	grid-template-columns: minmax(0, 2fr) minmax(120px, 1fr);
+	gap: 8px;
+}
+
+.checkboxes {
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.checkbox {
+	> div {
+		display: flex;
+		align-items: flex-start;
+		gap: 5px;
+
+		cursor: pointer;
+	}
+
+	/*
+	 * Кастомный квадратик ControlledCheckbox.
+	 */
+	> div > label {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 11px;
+		height: 11px;
+
+		flex: 0 0 11px;
+
+		margin-top: 1px;
+
+		border: 1px solid #3c27b3;
+		border-radius: 3px;
+
+		background: #ffffff;
+
+		svg {
+			width: 7px;
+			height: 7px;
+		}
+	}
+}
+
+.checkboxText {
+	display: block;
+
+	font-size: 9px;
+	font-weight: 400;
+	line-height: 1.35;
+
+	color: #222222;
+
+	a {
+		color: #3522b4;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.submitBtn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	height: 45px;
+
+	margin-top: 3px;
+	padding: 0 20px;
+
+	border: 0;
+	border-radius: 2px;
+
+	font-family: inherit;
+	font-size: 13px;
+	font-weight: 600;
+
+	color: #ffffff;
+	background: #3c27b3;
+
+	cursor: pointer;
+
+	transition:
+		background-color 0.2s ease,
+		opacity 0.2s ease;
+
+	&:hover {
+		background: #4a34c5;
+	}
+
+	&:disabled {
+		opacity: 0.6;
+		cursor: default;
+	}
+}
+
+@media (max-width: 850px) {
+	.wrapper {
+		grid-template-columns: 1fr 1fr;
+
+		max-width: none;
+
+		gap: 35px;
+		padding: 35px 25px;
+	}
+}
+
+@media (max-width: 700px) {
+	.requestSection {
+		padding: 30px 0;
+	}
+
+	.wrapper {
+		grid-template-columns: 1fr;
+
+		gap: 32px;
+
+		padding: 30px 20px;
+
+		border-radius: 12px;
+	}
+
+	.info {
+		padding: 0;
+	}
+
+	.title {
+		margin-bottom: 16px;
+
+		font-size: 27px;
+	}
+
+	.description {
+		font-size: 14px;
+
+		br {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 450px) {
+	.wrapper {
+		padding: 25px 15px;
+	}
+
+	.title {
+		font-size: 25px;
+	}
+
+	.contactsRow {
+		grid-template-columns: 1fr;
+	}
+
+	.input {
+		input {
+			height: 40px;
+		}
+	}
+
+	.checkboxText {
+		font-size: 10px;
+	}
+
+	.submitBtn {
+		height: 44px;
+	}
+}

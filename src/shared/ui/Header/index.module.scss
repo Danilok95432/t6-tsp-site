@@ -1,3 +1,5 @@
+@use 'src/app/root/styles/typography' as type;
+
 .header {
 	width: 100%;
 	background: #ffffff;
@@ -41,9 +43,7 @@
 	align-items: center;
 	gap: 8px;
 
-	font-size: 16px;
-	font-weight: 600;
-	line-height: 24px;
+	@include type.style('text-m', type.$semibold);
 
 	color: #171717;
 	text-decoration: none;
@@ -66,10 +66,7 @@
 	border: 0;
 	border-radius: 3px;
 
-	font-family: inherit;
-	font-size: 18px;
-	line-height: 28px;
-	font-weight: 600;
+	@include type.style('text-l', type.$semibold);
 
 	color: #ffffff;
 	background: #3524a2;

@@ -1,0 +1,33 @@
+@use './typography' as type;
+
+@mixin page-title {
+	@include type.style('display-2xl', type.$medium);
+}
+
+@mixin section-title {
+	@include type.style('display-l', type.$medium);
+}
+
+@mixin card-title {
+	@include type.style('text-xs', type.$medium);
+}
+
+@mixin body {
+	@include type.style('text-m');
+}
+
+@mixin navXl {
+	@include type.style('text-xl', type.$semibold);
+}
+
+@mixin nav {
+	@include type.style('text-l', type.$semibold);
+}
+
+@mixin body-small {
+	@include type.style('text-s');
+}
+
+@mixin caption {
+	@include type.style('text-xs');
+}
