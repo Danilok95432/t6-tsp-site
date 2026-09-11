@@ -4,6 +4,7 @@ import { Container } from 'src/shared/ui/Container/Container'
 import { Section } from 'src/shared/ui/Section/section'
 
 import styles from './index.module.scss'
+import { LocationIconSVG } from 'src/shared/ui/icons/locationIconSVG'
 
 declare global {
 	interface Window {
@@ -116,20 +117,12 @@ export const ContactsMapSection = () => {
 
 	return (
 		<Section id='contacts' className={styles.contactsSection}>
-			<Container>
+			<Container bigCont>
 				<h2 className={styles.title}>Контакты и карта</h2>
 
 				<div className={styles.contacts}>
 					<div className={styles.contactItem}>
-						<svg width='13' height='13' viewBox='0 0 16 16' fill='none' aria-hidden='true'>
-							<path
-								d='M12.2 6.7C12.2 9.5 8 13.5 8 13.5C8 13.5 3.8 9.5 3.8 6.7C3.8 4.38 5.68 2.5 8 2.5C10.32 2.5 12.2 4.38 12.2 6.7Z'
-								stroke='currentColor'
-								strokeWidth='1.3'
-							/>
-
-							<circle cx='8' cy='6.7' r='1.4' stroke='currentColor' strokeWidth='1.3' />
-						</svg>
+						<LocationIconSVG />
 
 						<span>Тамбов, бул. Энтузиастов, 2А</span>
 					</div>

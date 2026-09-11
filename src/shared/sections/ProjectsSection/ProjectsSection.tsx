@@ -9,7 +9,7 @@ import { Section } from 'src/shared/ui/Section/section'
 
 import styles from './index.module.scss'
 
-type ProjectCategory = 'all' | 'hotels' | 'shopping' | 'sport' | 'schools' | 'other'
+type ProjectCategory = 'all' | 'hotels' | 'shopping' | 'sport' | 'schools' | 'punkts' | 'other'
 
 type ProjectTab = {
 	id: ProjectCategory
@@ -47,6 +47,10 @@ const projectTabs: ProjectTab[] = [
 	{
 		id: 'schools',
 		title: 'Школы',
+	},
+	{
+		id: 'punkts',
+		title: 'Пункты пропуска',
 	},
 	{
 		id: 'other',
@@ -155,25 +159,33 @@ export const ProjectsSection = () => {
 				</div>
 
 				<div className={styles.tabsWrapper}>
-					<div className={styles.tabs}>
+					<Swiper
+						className={styles.tabsSlider}
+						slidesPerView='auto'
+						spaceBetween={12}
+						grabCursor
+						simulateTouch
+						allowTouchMove
+					>
 						{projectTabs.map((tab) => (
-							<button
-								key={tab.id}
-								type='button'
-								className={`${styles.tab} ${activeTab === tab.id ? styles.activeTab : ''}`}
-								onClick={() => setActiveTab(tab.id)}
-							>
-								{tab.title}
-							</button>
+							<SwiperSlide key={tab.id} className={styles.tabSlide}>
+								<button
+									type='button'
+									className={`${styles.tab} ${activeTab === tab.id ? styles.activeTab : ''}`}
+									onClick={() => setActiveTab(tab.id)}
+								>
+									{tab.title}
+								</button>
+							</SwiperSlide>
 						))}
-					</div>
+					</Swiper>
 				</div>
 
 				<Swiper
 					key={activeTab}
 					className={styles.slider}
 					slidesPerView={3}
-					spaceBetween={14}
+					spaceBetween={24}
 					speed={500}
 					grabCursor
 					simulateTouch
@@ -189,7 +201,7 @@ export const ProjectsSection = () => {
 						},
 						900: {
 							slidesPerView: 3,
-							spaceBetween: 14,
+							spaceBetween: 24,
 						},
 					}}
 				>

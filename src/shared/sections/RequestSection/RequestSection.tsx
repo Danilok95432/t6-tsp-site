@@ -1,7 +1,6 @@
 import { FormProvider, type SubmitHandler, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 
-import { Container } from 'src/shared/ui/Container/Container'
 import { Section } from 'src/shared/ui/Section/section'
 
 import { requestFormDefaultValues, requestFormSchema, type RequestFormInputs } from './schema'
@@ -29,95 +28,91 @@ export const RequestSection = () => {
 
 	return (
 		<Section id='request' className={styles.requestSection}>
-			<Container>
-				<div className={styles.wrapper}>
-					<div className={styles.info}>
-						<h2 className={styles.title}>
-							Оставьте заявку,
-							<br />и мы с вами свяжемся
-						</h2>
+			<div className={styles.wrapper}>
+				<div className={styles.info}>
+					<h2 className={styles.title}>
+						Оставьте заявку,
+						<br />и мы с вами свяжемся
+					</h2>
 
-						<p className={styles.description}>
-							По вопросам разработки индивидуального
-							<br />
-							решения отправьте запрос на почту:
-						</p>
+					<p className={styles.description}>
+						По вопросам разработки индивидуального
+						<br />
+						решения отправьте запрос на почту:
+					</p>
 
-						<a className={styles.emailLink} href='mailto:info@info.ru'>
-							<MailIconSVG />
+					<a className={styles.emailLink} href='mailto:info@info.ru'>
+						<MailIconSVG color='#3524A2' bigSize />
 
-							<span>info@info.ru</span>
-						</a>
-					</div>
+						<span>info@info.ru</span>
+					</a>
+				</div>
 
-					<FormProvider {...methods}>
-						<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+				<FormProvider {...methods}>
+					<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+						<ControlledInput
+							name='name'
+							placeholder='Как к вам обращаться? *'
+							className={styles.input}
+						/>
+
+						<div className={styles.contactsRow}>
 							<ControlledInput
-								name='name'
-								placeholder='Как к вам обращаться? *'
+								name='email'
+								type='email'
+								placeholder='Электронная почта'
 								className={styles.input}
 							/>
 
-							<div className={styles.contactsRow}>
-								<ControlledInput
-									name='email'
-									type='email'
-									placeholder='Электронная почта'
-									className={styles.input}
-								/>
-
-								<ControlledInput
-									name='phone'
-									isPhone
-									placeholder='Номер телефона *'
-									className={styles.input}
-								/>
-							</div>
-
 							<ControlledInput
-								name='comment'
-								isTextarea
-								placeholder='Комментарий'
-								className={styles.textarea}
-								height='88px'
+								name='phone'
+								isPhone
+								placeholder='Номер телефона *'
+								className={styles.input}
+							/>
+						</div>
+
+						<ControlledInput
+							name='comment'
+							isTextarea
+							placeholder='Комментарий'
+							className={styles.textarea}
+							height='146px'
+						/>
+
+						<div className={styles.checkboxes}>
+							<ControlledCheckbox
+								name='messenger'
+								type='checkbox'
+								className={styles.checkbox}
+								customLabel={<span className={styles.checkboxText}>Напишите мне в мессенджер</span>}
 							/>
 
-							<div className={styles.checkboxes}>
-								<ControlledCheckbox
-									name='messenger'
-									type='checkbox'
-									className={styles.checkbox}
-									customLabel={
-										<span className={styles.checkboxText}>Напишите мне в мессенджер</span>
-									}
-								/>
+							<ControlledCheckbox
+								name='privacy'
+								type='checkbox'
+								className={styles.checkbox}
+								customLabel={
+									<span className={styles.checkboxText}>
+										Я соглашаюсь с{' '}
+										<a href='/privacy' onClick={(event) => event.stopPropagation()}>
+											политикой конфиденциальности
+										</a>{' '}
+										и{' '}
+										<a href='/personal-data' onClick={(event) => event.stopPropagation()}>
+											правилами обработки персональных данных
+										</a>
+									</span>
+								}
+							/>
+						</div>
 
-								<ControlledCheckbox
-									name='privacy'
-									type='checkbox'
-									className={styles.checkbox}
-									customLabel={
-										<span className={styles.checkboxText}>
-											Я соглашаюсь с{' '}
-											<a href='/privacy' onClick={(event) => event.stopPropagation()}>
-												политикой конфиденциальности
-											</a>{' '}
-											и{' '}
-											<a href='/personal-data' onClick={(event) => event.stopPropagation()}>
-												правилами обработки персональных данных
-											</a>
-										</span>
-									}
-								/>
-							</div>
-
-							<button type='submit' className={styles.submitBtn} disabled={isSubmitting}>
-								Отправить заявку
-							</button>
-						</form>
-					</FormProvider>
-				</div>
-			</Container>
+						<button type='submit' className={styles.submitBtn} disabled={isSubmitting}>
+							Отправить заявку
+						</button>
+					</form>
+				</FormProvider>
+			</div>
 		</Section>
 	)
 }

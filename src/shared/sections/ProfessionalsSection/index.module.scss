@@ -1,9 +1,11 @@
+@use 'src/app/root/styles/typography' as type;
+
 .professionals {
-	padding: 38px 0;
+	padding: 48px 0;
 }
 
 .wrapper {
-	padding: 23px 14px 28px;
+	padding: 32px 22px 48px;
 
 	overflow: hidden;
 
@@ -14,7 +16,7 @@
 		#d7d6e8 100%
 	);
 
-	border-radius: 10px;
+	border-radius: 16px;
 }
 
 .header {
@@ -22,17 +24,15 @@
 	align-items: flex-start;
 	justify-content: space-between;
 
-	margin-bottom: 22px;
+	margin-bottom: 32px;
 }
 
-.title {
+h2.title {
 	margin: 0;
 
-	font-size: 30px;
-	font-weight: 400;
-	line-height: 1.1;
+	@include type.style('display-l', type.$medium);
 
-	color: #1b1b1b;
+	color: #171717;
 }
 
 .allProfessionals {
@@ -40,38 +40,28 @@
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 8px;
-
-	padding-top: 1px;
+	padding-top: 2px;
 }
 
 .total {
-	font-size: 10px;
-	font-weight: 400;
-	line-height: 1;
-
-	color: #858585;
+	@include type.style('text-m', type.$regular);
+	color: #1717178e;
 }
 
 .allProfessionalsLink {
 	display: flex;
 	align-items: center;
-	gap: 7px;
-
-	font-size: 10px;
-	font-weight: 400;
-	line-height: 1;
-
-	color: #3522b4;
+	gap: 12.5px;
+	@include type.style('text-m', type.$medium);
+	color: #3524A2;
 	text-decoration: none;
-
-	transition: opacity 0.2s ease;
-
+	transition: all 0.2s ease;
 	svg {
 		flex-shrink: 0;
 	}
-
 	&:hover {
-		opacity: 0.7;
+		color: #4E51FF;
+		text-decoration: underline;
 	}
 }
 
@@ -93,11 +83,11 @@
 	min-height: 103px;
 	height: 100%;
 
-	padding: 17px 15px 15px;
+	padding: 24px;
 
-	border-radius: 10px;
+	border-radius: 16px;
 
-	color: #191919;
+	color: #171717;
 	text-decoration: none;
 
 	background: #ffffff;
@@ -111,35 +101,36 @@
 
 		box-shadow: 0 5px 15px rgb(0 0 0 / 5%);
 
+		.cardTitle {
+			color: #4E51FF;
+		}
+
 		.cardBottom {
 			svg {
 				transform: translateX(3px);
 			}
 		}
+		.count {
+			color: #4E51FF;
+			text-decoration: underline;
+		}
 	}
 }
 
 .cardTitle {
-	max-width: 155px;
+	max-width: 243px;
 
 	margin: 0;
 
-	font-size: 13px;
-	font-weight: 400;
-	line-height: 1.15;
-
-	color: #191919;
+	@include type.style('text-xl', type.$medium);
+	color: #171717;
 }
 
 .cardBottom {
 	display: flex;
 	align-items: center;
 	gap: 7px;
-
-	margin-top: 25px;
-
-	color: #3522b4;
-
+	color: #3524A2;
 	svg {
 		flex-shrink: 0;
 
@@ -148,9 +139,7 @@
 }
 
 .count {
-	font-size: 10px;
-	font-weight: 400;
-	line-height: 1;
+	@include type.style('text-xl', type.$medium);
 }
 
 @media (max-width: 768px) {

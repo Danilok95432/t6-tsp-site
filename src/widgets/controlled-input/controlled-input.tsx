@@ -242,6 +242,7 @@ export const ControlledInput: FC<ControlledInputProps> = ({
 										[styles.noValid]: errors[name],
 										[styles.noBorder]: isLogin,
 									})}
+									placeholder='Номер телефона'
 								/>
 							</InputMask>
 						)}

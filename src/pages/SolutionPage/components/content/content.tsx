@@ -11,6 +11,16 @@ import { solutionMock } from '../../consts'
 
 import styles from './index.module.scss'
 import { sidebarNavigationItems } from './consts'
+import { DownloadIcon } from 'src/shared/ui/icons/downloadSVG'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { useForm, type SubmitHandler, FormProvider } from 'react-hook-form'
+import {
+	type RequestFormInputs,
+	requestFormSchema,
+	requestFormDefaultValues,
+} from 'src/shared/sections/RequestSection/schema'
+import { ControlledCheckbox } from 'src/widgets/controlled-checkbox/controlled-checkbox'
+import { ControlledInput } from 'src/widgets/controlled-input/controlled-input'
 
 const formatPrice = (price: number) => {
 	return new Intl.NumberFormat('ru-RU', {
@@ -29,6 +39,15 @@ export const SolutionContentSection = () => {
 
 	const kitTotal = solutionMock.kit.reduce((sum, item) => sum + item.total, 0)
 
+	const methods = useForm<RequestFormInputs>({
+		resolver: yupResolver(requestFormSchema),
+		defaultValues: requestFormDefaultValues,
+	})
+
+	const onSubmit: SubmitHandler<RequestFormInputs> = (data) => {
+		console.log(data)
+	}
+
 	const getHeaderHeight = () => {
 		const header = document.querySelector('header')
 
@@ -44,10 +63,6 @@ export const SolutionContentSection = () => {
 
 		const top = element.getBoundingClientRect().top + window.scrollY - headerHeight - 25
 
-		/*
-		 * Сразу отмечаем нажатый пункт,
-		 * чтобы активное состояние не ждало окончания скролла.
-		 */
 		setActiveSection(sectionId)
 
 		programmaticScrollRef.current = true
@@ -156,7 +171,7 @@ export const SolutionContentSection = () => {
 									ref={swiperRef}
 									className={styles.gallerySlider}
 									slidesPerView={3}
-									spaceBetween={15}
+									spaceBetween={24}
 									speed={500}
 									grabCursor
 									breakpoints={{
@@ -223,38 +238,32 @@ export const SolutionContentSection = () => {
 						<section id='solution-materials' className={styles.contentBlock}>
 							<h2 className={styles.blockTitle}>Материалы</h2>
 
-							<ol className={styles.materials}>
+							<ul className={styles.materials}>
 								{solutionMock.materials.map((material) => (
 									<li className={styles.material} key={material.id}>
-										<div>
-											<a href={material.file} download className={styles.materialTitle}>
-												{material.title}
+										<div className={styles.materialContent}>
+											<div>
+												<a href={material.file} download className={styles.materialTitle}>
+													{material.title}
+												</a>
+
+												<span className={styles.materialMeta}>
+													{material.type}, {material.size}
+												</span>
+											</div>
+
+											<a
+												href={material.file}
+												download
+												className={styles.download}
+												aria-label={`Скачать ${material.title}`}
+											>
+												<DownloadIcon />
 											</a>
-
-											<span className={styles.materialMeta}>
-												{material.type}, {material.size}
-											</span>
 										</div>
-
-										<a
-											href={material.file}
-											download
-											className={styles.download}
-											aria-label={`Скачать ${material.title}`}
-										>
-											<svg width='16' height='16' viewBox='0 0 16 16' fill='none'>
-												<path
-													d='M8 2V10M8 10L5 7M8 10L11 7M3 12V14H13V12'
-													stroke='currentColor'
-													strokeWidth='1.3'
-													strokeLinecap='round'
-													strokeLinejoin='round'
-												/>
-											</svg>
-										</a>
 									</li>
 								))}
-							</ol>
+							</ul>
 						</section>
 
 						<p className={styles.note}>
@@ -267,11 +276,80 @@ export const SolutionContentSection = () => {
 							<span>‹</span>
 							{solutionMock.categoryTitle}
 						</Link>
+						<Section id='request' className={styles.section}>
+							<Container>
+								<div className={styles.wrapper}>
+									<h2 className={styles.title}>Оставьте заявку, и мы с вами свяжемся</h2>
+
+									<FormProvider {...methods}>
+										<form className={styles.form} onSubmit={methods.handleSubmit(onSubmit)}>
+											<ControlledInput
+												name='name'
+												placeholder='Как к вам обращаться? *'
+												className={styles.input}
+											/>
+
+											<div className={styles.contacts}>
+												<ControlledInput
+													name='email'
+													type='email'
+													placeholder='Электронная почта'
+													className={styles.input}
+												/>
+
+												<ControlledInput
+													name='phone'
+													isPhone
+													placeholder='Номер телефона *'
+													className={styles.input}
+												/>
+											</div>
+
+											<ControlledInput
+												name='comment'
+												isTextarea
+												placeholder='Комментарий'
+												height='120px'
+												className={styles.input}
+											/>
+
+											<div className={styles.checkboxes}>
+												<ControlledCheckbox
+													name='messenger'
+													type='checkbox'
+													customLabel={
+														<span className={styles.checkboxLabel}>Напишите мне в мессенджер</span>
+													}
+												/>
+
+												<ControlledCheckbox
+													name='privacy'
+													type='checkbox'
+													customLabel={
+														<span className={styles.checkboxLabel}>
+															Я соглашаюсь с{' '}
+															<a href='/privacy' onClick={(event) => event.stopPropagation()}>
+																политикой конфиденциальности
+															</a>{' '}
+															и правилами обработки персональных данных
+														</span>
+													}
+												/>
+											</div>
+
+											<button type='submit' className={styles.submit}>
+												Отправить заявку
+											</button>
+										</form>
+									</FormProvider>
+								</div>
+							</Container>
+						</Section>
 					</div>
 
 					<aside className={styles.sidebar}>
 						<div className={styles.priceCard}>
-							<div className={styles.solutionPrice}>{formatPrice(solutionMock.price)} ₽</div>
+							<div className={styles.solutionPrice}>{formatPrice(solutionMock.price)}* ₽</div>
 
 							<button type='button' className={styles.requestBtn} onClick={scrollToRequest}>
 								Отправить заявку

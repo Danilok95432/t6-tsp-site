@@ -29,7 +29,7 @@ export const solutionMock = {
 	title: 'Контроль строительной площадки',
 	type: 'Решение',
 
-	image: '/images/solutions/construction-camera.png',
+	image: 'src/assets/img/solutionMockImg.png',
 
 	price: 4_209_869,
 
@@ -84,7 +84,7 @@ export const solutionMock = {
 		{
 			id: '1',
 			title:
-				'Контроллер GATE-8000-Ethernet. Подключение — Ethernet; поддержка 2 считывателей Wiegand',
+				'Контроллер GATE-8000-Ethernet. Подключение — Ethernet; поддержка 2 считывателей Wiegand, память, до 16334 ключей, до 8192. событий, 2 релейных выхода',
 			count: 1,
 			price: 14_151,
 			total: 14_151,
@@ -98,7 +98,8 @@ export const solutionMock = {
 		},
 		{
 			id: '3',
-			title: 'DHI-ITC413-PW4D-IZ1-Gate Интеллектуальная ANPR камера',
+			title:
+				'DHI-ITC413-PW4D-IZ1-Gate Интеллектуальная ANPR камера Dahua с распознаванием автономеров со специальной прошивкой Dahua-Gate. На базе серийных моделей DHI-ITC413-PW4D-IZ1',
 			count: 2,
 			price: 58_200,
 			total: 116_400,

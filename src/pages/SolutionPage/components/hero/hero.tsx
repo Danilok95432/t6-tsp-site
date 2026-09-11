@@ -3,6 +3,8 @@ import { Section } from 'src/shared/ui/Section/section'
 
 import { solutionMock } from '../../consts'
 
+import mockImg from 'src/assets/img/solutionMockImg.png'
+
 import styles from './index.module.scss'
 
 export const SolutionHeroSection = () => {
@@ -25,7 +27,7 @@ export const SolutionHeroSection = () => {
 					</div>
 
 					<div className={styles.imageWrapper}>
-						<img className={styles.image} src={solutionMock.image} alt={solutionMock.title} />
+						<img className={styles.image} src={mockImg} alt={solutionMock.title} />
 					</div>
 				</Container>
 			</div>

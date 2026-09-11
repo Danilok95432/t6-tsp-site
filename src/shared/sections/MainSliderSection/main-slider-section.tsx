@@ -11,6 +11,8 @@ import { SliderBtns } from 'src/widgets/Slider-btns/slider-btns'
 
 import { sliderOptions } from './consts'
 
+import mockImg from 'src/assets/img/mockMainSlider.png'
+
 import styles from './index.module.scss'
 
 export const MainSliderSection = () => {
@@ -26,7 +28,7 @@ export const MainSliderSection = () => {
 			category_id: '1',
 			img: [
 				{
-					original: '',
+					original: mockImg,
 				},
 			],
 		},
@@ -38,7 +40,7 @@ export const MainSliderSection = () => {
 			category_id: '2',
 			img: [
 				{
-					original: '',
+					original: mockImg,
 				},
 			],
 		},
@@ -50,7 +52,7 @@ export const MainSliderSection = () => {
 			category_id: '3',
 			img: [
 				{
-					original: '',
+					original: mockImg,
 				},
 			],
 		},
@@ -91,15 +93,11 @@ export const MainSliderSection = () => {
 										</div>
 
 										<div className={styles.imgWrapper}>
-											{/* Картинку вставишь сюда */}
-
-											{/* Например:
 											<img
 												className={styles.sliderImg}
 												src={slideEl.img[0]?.original}
 												alt={slideEl.title}
 											/>
-											*/}
 										</div>
 									</FlexRow>
 								</SwiperSlide>

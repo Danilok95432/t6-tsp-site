@@ -1,9 +1,33 @@
-export const MailIconSVG = () => {
+type SVGPROPS = {
+	color?: string
+	bigSize?: boolean
+}
+
+export const MailIconSVG = ({ color = '#8370FF', bigSize }: SVGPROPS) => {
+	if (bigSize) {
+		return (
+			<svg
+				width='24'
+				height='24'
+				viewBox='0 0 24 24'
+				fill='none'
+				xmlns='http://www.w3.org/2000/svg'
+			>
+				<path
+					d='M22 7.5C22 6.4 21.1 5.5 20 5.5H4C2.9 5.5 2 6.4 2 7.5M22 7.5V19.5C22 20.6 21.1 21.5 20 21.5H4C2.9 21.5 2 20.6 2 19.5V7.5M22 7.5L12 14.5L2 7.5'
+					stroke='#3524A2'
+					strokeWidth='2'
+					strokeLinecap='round'
+					strokeLinejoin='round'
+				/>
+			</svg>
+		)
+	}
 	return (
 		<svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
 			<path
 				d='M14.5 3.875C14.5 3.11875 13.915 2.5 13.2 2.5H2.8C2.085 2.5 1.5 3.11875 1.5 3.875M14.5 3.875V12.125C14.5 12.8813 13.915 13.5 13.2 13.5H2.8C2.085 13.5 1.5 12.8813 1.5 12.125V3.875M14.5 3.875L8 8.6875L1.5 3.875'
-				stroke='#8370FF'
+				stroke={color}
 				strokeWidth='1.5'
 				strokeLinecap='round'
 				strokeLinejoin='round'

@@ -4,6 +4,8 @@ import { Container } from 'src/shared/ui/Container/Container'
 import { Section } from 'src/shared/ui/Section/section'
 
 import styles from './index.module.scss'
+import { DocumentSVG } from 'src/shared/ui/icons/documentSVG'
+import { useState } from 'react'
 
 type DocumentItem = {
 	id: string
@@ -48,6 +50,7 @@ const certificatesMock = {
 }
 
 export const DocumentsSection = () => {
+	const [activeDocumentId, setActiveDocumentId] = useState<string | null>(null)
 	return (
 		<Section id='documents' className={styles.documents}>
 			<Container>
@@ -70,21 +73,32 @@ export const DocumentsSection = () => {
 
 				<div className={styles.grid}>
 					{documentsMock.map((document) => (
-						<article className={styles.documentCard} key={document.id}>
-							<div className={styles.documentContent}>
-								<h3 className={styles.documentTitle}>{document.title}</h3>
+						<div
+							className={styles.documentItem}
+							key={document.id}
+							onMouseEnter={() => setActiveDocumentId(document.id)}
+							onMouseLeave={() => setActiveDocumentId(null)}
+						>
+							<article className={styles.documentCard}>
+								<div className={styles.documentContent}>
+									<h3 className={styles.documentTitle}>{document.title}</h3>
 
-								<p className={styles.documentDescription}>{document.description}</p>
-							</div>
+									<p className={styles.documentDescription}>{document.description}</p>
+								</div>
 
-							<a className={styles.downloadBtn} href={document.fileName} download>
-								<span>Скачать</span>
+								<a className={styles.downloadBtn} href={document.fileName} download>
+									<span>Скачать</span>
 
-								<span className={styles.fileInfo}>
-									{document.fileType}, {document.fileSize}
-								</span>
-							</a>
-						</article>
+									<span className={styles.fileInfo}>
+										{document.fileType}, {document.fileSize}
+									</span>
+								</a>
+							</article>
+							<DocumentSVG
+								className={styles.documentIcon}
+								color={activeDocumentId === document.id ? '#4E51FF' : '#D5D5D5'}
+							/>
+						</div>
 					))}
 
 					<Link to={certificatesMock.link} className={styles.certificatesCard}>

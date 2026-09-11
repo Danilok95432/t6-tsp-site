@@ -1,17 +1,18 @@
+@use 'src/app/root/styles/typography' as type;
+
 .hero {
 	padding: 0;
 }
 
 .wrapper {
 	width: 100%;
-	min-height: 410px;
 
 	overflow: hidden;
 
 	background: linear-gradient(
 		105deg,
 		#abc8e2 0%,
-		#bdcee1 52%,
+		#bdcee1 50%,
 		#d7d6e8 100%
 	);
 
@@ -20,10 +21,10 @@
 
 .cont {
 	display: flex;
-	align-items: center;
+	align-items: end;
 	justify-content: space-between;
 
-	min-height: 410px;
+	padding: 56px 0;
 }
 
 .content {
@@ -31,64 +32,60 @@
 	flex-direction: column;
 	align-items: flex-start;
 
-	width: 58%;
+	width: 100%;
+	max-width: 792px;
+	gap: 73px;
 }
 
 .type {
-	margin-bottom: 70px;
 
-	font-size: 13px;
-	font-weight: 400;
+	@include type.style('text-l', type.$medium);
 
-	color: #191919;
+	color: #171717;
 }
 
-.title {
-	max-width: 600px;
+h1.title {
+	max-width: 100%;
+	@include type.style('display-xl', type.$medium);
 
-	margin: 0 0 65px;
-
-	font-size: 50px;
-	font-weight: 400;
-	line-height: 0.98;
-	letter-spacing: -1.3px;
-
-	color: #191919;
+	color: #171717;
 }
 
 .tags {
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: 10px;
+	gap: 16px;
 }
 
 .tag {
-	padding: 6px 11px;
+	padding: 6px 12px;
 
-	font-size: 10px;
-	line-height: 1;
+	@include type.style('text-s', type.$medium);
 
-	color: #272727;
+	color: #171717;
 	background: #ffffff;
 
-	border-radius: 3px;
+	border-radius: 4px;
 }
 
 .imageWrapper {
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	align-items: end;
+	justify-content: end;
 
-	width: 38%;
+	width: 100%;
+	max-width: 310px;
+	height: 100%;
 }
 
 .image {
 	display: block;
 
 	width: 100%;
-	max-width: 330px;
-	max-height: 270px;
+	height: 100%;
+	max-width: 310px;
+	max-height: 249px;
 
 	object-fit: contain;
 }

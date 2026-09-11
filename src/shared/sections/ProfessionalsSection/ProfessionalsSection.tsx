@@ -59,7 +59,7 @@ const totalProfessionals = 265
 export const ProfessionalsSection = () => {
 	return (
 		<Section id='professionals' className={styles.professionals}>
-			<Container>
+			<Container bigCont>
 				<div className={styles.wrapper}>
 					<div className={styles.header}>
 						<h2 className={styles.title}>Профессионалы</h2>
