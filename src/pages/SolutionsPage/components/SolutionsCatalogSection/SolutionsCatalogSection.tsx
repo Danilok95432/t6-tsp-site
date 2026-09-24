@@ -335,38 +335,40 @@ type SolutionCardProps = {
 
 const SolutionCard = ({ solution }: SolutionCardProps) => {
 	return (
-		<article className={styles.card}>
-			<div className={styles.cardInfo}>
-				<h2 className={styles.cardTitle}>{solution.title}</h2>
+		<Link to={solution.link}>
+			<article className={styles.card}>
+				<div className={styles.cardInfo}>
+					<h2 className={styles.cardTitle}>{solution.title}</h2>
 
-				<p className={styles.cardDescription}>{solution.description}</p>
+					<p className={styles.cardDescription}>{solution.description}</p>
 
-				<Link to={solution.link} className={styles.details}>
-					<span>Полное описание</span>
+					<div className={styles.details}>
+						<span>Полное описание</span>
 
-					<svg width='6' height='10' viewBox='0 0 6 10' fill='none' aria-hidden='true'>
-						<path
-							d='M1 1L5 5L1 9'
-							stroke='currentColor'
-							strokeLinecap='round'
-							strokeLinejoin='round'
-						/>
-					</svg>
-				</Link>
-			</div>
-
-			<div className={styles.cardSide}>
-				<div className={styles.price}>{formatPrice(solution.price)} ₽</div>
-
-				<div className={styles.tags}>
-					{solution.tags.map((tag) => (
-						<span key={tag.id} className={`${styles.tag} ${styles[getTagClass(tag)]}`}>
-							{tag.title}
-						</span>
-					))}
+						<svg width='6' height='10' viewBox='0 0 6 10' fill='none' aria-hidden='true'>
+							<path
+								d='M1 1L5 5L1 9'
+								stroke='currentColor'
+								strokeLinecap='round'
+								strokeLinejoin='round'
+							/>
+						</svg>
+					</div>
 				</div>
-			</div>
-		</article>
+
+				<div className={styles.cardSide}>
+					<div className={styles.price}>{formatPrice(solution.price)} ₽</div>
+
+					<div className={styles.tags}>
+						{solution.tags.map((tag) => (
+							<span key={tag.id} className={`${styles.tag} ${styles[getTagClass(tag)]}`}>
+								{tag.title}
+							</span>
+						))}
+					</div>
+				</div>
+			</article>
+		</Link>
 	)
 }
 
