@@ -1,0 +1,155 @@
+@use 'src/app/root/styles/typography' as type;
+
+.hero {
+	padding: 0;
+}
+
+.wrapper {
+	width: 100%;
+	min-height: 300px;
+
+	overflow: hidden;
+
+	background: linear-gradient(
+		105deg,
+		#abc8e2 0%,
+		#bdcee1 50%,
+		#d7d6e8 100%
+	);
+
+	border-radius: 16px;
+}
+
+.cont {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 48px 0;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	width: 55%;
+}
+
+.breadcrumbs {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	margin-bottom: 64px;
+
+	@include type.style('text-m', type.$medium);
+
+	color: #171717;
+
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		transition: color 0.2s ease;
+
+		&:hover {
+			color: #4E51FF;
+		}
+	}
+}
+
+.breadcrumbArrow {
+	font-size: 17px;
+	line-height: 0;
+}
+
+.title {
+	margin: 0 0 48px;
+
+	@include type.style('display-2xl', type.$medium);
+
+	color: #171717;
+}
+
+.description {
+	max-width: 598px;
+
+	margin: 0;
+
+	@include type.style('text-xl', type.$medium);
+
+	color: #171717;
+}
+
+.imageWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 40%;
+	height: 230px;
+}
+
+.image {
+	display: block;
+
+	width: 100%;
+	max-width: 330px;
+	max-height: 210px;
+
+	object-fit: contain;
+}
+
+@media (max-width: 768px) {
+	.wrapper,
+	.cont {
+		min-height: 270px;
+	}
+
+	.breadcrumbs {
+		margin-bottom: 35px;
+	}
+
+	.title {
+		font-size: 34px;
+	}
+
+	.description {
+		font-size: 13px;
+	}
+}
+
+@media (max-width: 600px) {
+	.cont {
+		flex-direction: column;
+		align-items: flex-start;
+
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	.content {
+		width: 100%;
+	}
+
+	.breadcrumbs {
+		margin-bottom: 30px;
+	}
+
+	.title {
+		margin-bottom: 20px;
+
+		font-size: 32px;
+	}
+
+	.imageWrapper {
+		width: 100%;
+		height: 170px;
+
+		margin-top: 25px;
+	}
+
+	.image {
+		max-height: 160px;
+	}
+}
