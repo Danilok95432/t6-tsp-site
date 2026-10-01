@@ -127,6 +127,15 @@
 	position: relative;
 	flex-grow: 1;
 
+	&:hover {
+		input, textarea {
+			&::placeholder {
+				color: #171717;
+			}
+			border: 1px solid #4E51FF;
+		}
+	}
+
 	.warningMessage {
 		color: #f00000;
 		font-size: 14px;

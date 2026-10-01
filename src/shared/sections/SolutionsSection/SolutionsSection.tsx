@@ -49,8 +49,12 @@ const solutions: SolutionItem[] = [
 			'/images/solution-3.svg',
 			'/images/solution-4.svg',
 			'/images/solution-5.svg',
+			'/images/solution-1.svg',
+			'/images/solution-4.svg',
+			'/images/solution-5.svg',
+			'/images/solution-1.svg',
 		],
-		totalImages: 5,
+		totalImages: 9,
 	},
 	{
 		id: '2',
@@ -62,8 +66,11 @@ const solutions: SolutionItem[] = [
 			'/images/solution-2.svg',
 			'/images/solution-3.svg',
 			'/images/solution-4.svg',
+			'/images/solution-3.svg',
+			'/images/solution-4.svg',
+			'/images/solution-4.svg',
 		],
-		totalImages: 8,
+		totalImages: 7,
 	},
 	{
 		id: '3',
@@ -75,8 +82,13 @@ const solutions: SolutionItem[] = [
 			'/images/solution-2.svg',
 			'/images/solution-3.svg',
 			'/images/solution-4.svg',
+			'/images/solution-5.svg',
+			'/images/solution-1.svg',
+			'/images/solution-4.svg',
+			'/images/solution-5.svg',
+			'/images/solution-1.svg',
 		],
-		totalImages: 8,
+		totalImages: 9,
 	},
 	{
 		id: '4',
@@ -89,7 +101,7 @@ const solutions: SolutionItem[] = [
 			'/images/solution-3.svg',
 			'/images/solution-4.svg',
 		],
-		totalImages: 8,
+		totalImages: 4,
 	},
 ]
 
@@ -127,26 +139,48 @@ export const SolutionsSection = () => {
 				<div className={styles.cards}>
 					{filteredSolutions.map((solution) => {
 						const visibleImages = solution.images.slice(0, 4)
-						const hiddenImagesCount = solution.totalImages - visibleImages.length
+
+						const hiddenImagesCount = Math.max(solution.totalImages - visibleImages.length, 0)
 
 						return (
-							<a key={solution.id} href={solution.link} className={styles.card}>
-								<div className={styles.images}>
-									{visibleImages.map((image, index) => (
-										<div key={`${solution.id}-${index}`} className={styles.imageWrapper}>
-											<img src={image} alt='' className={styles.image} />
-										</div>
-									))}
+							<div key={solution.id} className={styles.cardSlot}>
+								<a href={solution.link} className={styles.card}>
+									<div className={styles.imagesArea}>
+										<div className={styles.collapsedImages}>
+											{visibleImages.map((image, index) => (
+												<div
+													key={`${solution.id}-collapsed-${index}`}
+													className={styles.imageWrapper}
+												>
+													<img src={image} alt='' className={styles.image} />
+												</div>
+											))}
 
-									{hiddenImagesCount > 0 && (
-										<div className={`${styles.imageWrapper} ${styles.moreImages}`}>
-											+{hiddenImagesCount}
+											{hiddenImagesCount > 0 && (
+												<div className={`${styles.imageWrapper} ${styles.moreImages}`}>
+													+{hiddenImagesCount}
+												</div>
+											)}
 										</div>
-									)}
-								</div>
 
-								<p className={styles.cardTitle}>{solution.title}</p>
-							</a>
+										<div className={styles.expandedImages}>
+											{solution.images.map((image, index) => (
+												<div
+													key={`${solution.id}-expanded-${index}`}
+													className={styles.expandedImageWrapper}
+													style={{
+														transitionDelay: `${index * 35}ms`,
+													}}
+												>
+													<img src={image} alt='' className={styles.image} />
+												</div>
+											))}
+										</div>
+									</div>
+
+									<p className={styles.cardTitle}>{solution.title}</p>
+								</a>
+							</div>
 						)
 					})}
 				</div>

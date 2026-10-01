@@ -64,15 +64,18 @@ a.contactItem {
 
 .mapWrapper {
 	width: 100%;
-	margin: 0 auto;
 	overflow: hidden;
 
-	border-radius: 16px;
+	border-radius: 10px;
 }
 
 .map {
+	display: block;
+
 	width: 100%;
 	height: 320px;
+
+	border: 0;
 }
 
 /*

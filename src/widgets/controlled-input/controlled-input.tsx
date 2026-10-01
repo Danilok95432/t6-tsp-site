@@ -226,7 +226,7 @@ export const ControlledInput: FC<ControlledInputProps> = ({
 						render={({ field }) => (
 							<InputMask
 								mask='+7 (999) 999-99-99'
-								maskChar={null}
+								maskPlaceholder={null}
 								value={field.value || ''}
 								onBlur={field.onBlur}
 								onChange={(e) => {
@@ -242,7 +242,7 @@ export const ControlledInput: FC<ControlledInputProps> = ({
 										[styles.noValid]: errors[name],
 										[styles.noBorder]: isLogin,
 									})}
-									placeholder='Номер телефона'
+									placeholder='Номер телефона *'
 								/>
 							</InputMask>
 						)}

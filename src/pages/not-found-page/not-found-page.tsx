@@ -7,7 +7,7 @@ export const NotFoundPage = () => {
 	return (
 		<Section className={styles.notFoundSection}>
 			<Container className={styles.notFoundCont}>
-				<h1 className={styles.title}>Страница не найдена</h1>
+				<h1 className={styles.title}>Страница не найдена 404</h1>
 			</Container>
 		</Section>
 	)
