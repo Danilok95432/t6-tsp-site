@@ -25,7 +25,7 @@ export const MainSliderSection = () => {
 			id: '1',
 			title: 'Системы безопасности доступа',
 			itemdesc: 'Проектирование, реконструкция, поставка оборудования, монтаж, обслуживание',
-			category_id: '1',
+			category_id: '',
 			img: [
 				{
 					original: mockImg,
@@ -37,7 +37,7 @@ export const MainSliderSection = () => {
 			title: 'Системы видеонаблюдения',
 			itemdesc:
 				'Проектирование и установка современных систем видеонаблюдения для объектов любого типа',
-			category_id: '2',
+			category_id: '5',
 			img: [
 				{
 					original: mockImg,
@@ -49,7 +49,7 @@ export const MainSliderSection = () => {
 			title: 'Пожарная безопасность',
 			itemdesc:
 				'Комплексные решения по проектированию, монтажу и обслуживанию систем пожарной безопасности',
-			category_id: '3',
+			category_id: '18',
 			img: [
 				{
 					original: mockImg,

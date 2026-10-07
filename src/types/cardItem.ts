@@ -13,6 +13,8 @@ export interface CardItem {
 	id: string
 	images: ImageItemWithText[]
 	type?: 'chocolate' | 'candy' | 'set' | 'coctail' | 'special'
+	type_id?: string
+	manufacturer_id?: string
 	title: string
 	artikul: string
 	item_weight: string
@@ -20,6 +22,7 @@ export interface CardItem {
 	item_desc: string
 	short: string
 	full: string
+	individualPrice?: string
 	img: ImageItemWithText[]
 	moreitems: CardItem[]
 	favourite: boolean
@@ -89,6 +92,7 @@ export interface ICatalog {
 export type SubCatItem = {
 	id: string
 	title: string
+	parent_id: string
 }
 
 export type CatalogListItem = {

@@ -45,7 +45,7 @@ export const catalogApi = createApi({
 			{ id?: string; limit?: string; step?: string; userId?: string }
 		>({
 			query: ({ id, limit, step, userId }) => ({
-				url: 'catalog/item',
+				url: 'catalog_goods/item',
 				params: {
 					id,
 					limit,
@@ -74,7 +74,7 @@ export const catalogApi = createApi({
 
 		getCategoriesCatalog: build.query<CatalogListItemsResponse, null>({
 			query: () => ({
-				url: 'catalog/list_items',
+				url: 'catalog_goods/list_items',
 			}),
 		}),
 

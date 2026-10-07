@@ -15,17 +15,17 @@ export const navigationItems: NavigationItem[] = [
 			{
 				id: '1-1',
 				title: 'Пункт меню 1',
-				sectionId: 'solution-1',
+				sectionId: '/solutions/1',
 			},
 			{
 				id: '1-2',
 				title: 'Пункт меню 2',
-				sectionId: 'solution-2',
+				sectionId: '/solutions/2',
 			},
 			{
 				id: '1-3',
 				title: 'Пункт меню 3',
-				link: '/solution-3',
+				link: '/solutions/3',
 			},
 		],
 	},
@@ -37,17 +37,17 @@ export const navigationItems: NavigationItem[] = [
 			{
 				id: '2-1',
 				title: 'Пункт меню 1',
-				link: '/catalog/1',
+				link: '/catalog/37',
 			},
 			{
 				id: '2-2',
 				title: 'Пункт меню 2',
-				link: '/catalog/2',
+				link: '/catalog/38',
 			},
 			{
 				id: '2-3',
 				title: 'Пункт меню 3',
-				link: '/catalog/3',
+				link: '/catalog/39',
 			},
 		],
 	},
