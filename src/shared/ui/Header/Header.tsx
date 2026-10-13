@@ -7,9 +7,22 @@ import { PhoneIconSVG } from '../icons/phoneIconSVG'
 import { MainNavigation } from 'src/widgets/main-navigation/main-navigation'
 
 import styles from './index.module.scss'
+import { CartIconSVG } from '../icons/cartIconSVG'
+import { PersonSVG } from '../icons/personSVG'
+import { useGetCountItemsCartQuery } from 'src/features/catalog/api/catalog.api'
 
 export const Header = () => {
 	const navigate = useNavigate()
+	const token = localStorage.getItem('token')
+	const userId = localStorage.getItem('userID') ?? ''
+
+	const authorized = Boolean(token)
+
+	const { data: countCartData } = useGetCountItemsCartQuery(userId, {
+		skip: !authorized || !userId,
+	})
+
+	const cartItemsCount = Number(countCartData?.cart_items ?? 0)
 
 	return (
 		<header className={styles.header}>
@@ -31,9 +44,20 @@ export const Header = () => {
 						<span>8 (812) 327-50-32</span>
 					</a>
 
-					<button type='button' className={styles.requestButton}>
+					{/* <button type='button' className={styles.requestButton}>
 						Отправить заявку
-					</button>
+					</button> */}
+					<FlexRow className={styles.btns}>
+						<div className={styles.vector}>
+							<PersonSVG />
+						</div>
+
+						<div className={styles.cartVector} onClick={() => navigate('/lk/cart')}>
+							<CartIconSVG />
+
+							{cartItemsCount > 0 && <span className={styles.cartBadge}>{cartItemsCount}</span>}
+						</div>
+					</FlexRow>
 				</FlexRow>
 			</Container>
 		</header>

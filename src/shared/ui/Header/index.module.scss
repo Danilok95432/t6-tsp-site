@@ -11,6 +11,7 @@
 
 .headerRow {
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	gap: 70px;
 
@@ -53,6 +54,39 @@
 		width: 24px;
 		height: 24px;
 		flex-shrink: 0;
+	}
+}
+
+.btns {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	gap: 27px;
+	@media (max-width: 768px) {
+		position: unset;
+	}
+	.vector {
+		cursor: pointer;
+	}
+	.cartVector {
+		position: relative;
+		cursor: pointer;
+	}
+
+	.cartBadge {
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		background: #fed65a;
+		color: #000;
+		font-size: 10px;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: -5px;
+		right: -9px;
 	}
 }
 

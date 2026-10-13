@@ -6,6 +6,7 @@ import { SolutionPage } from 'src/pages/SolutionPage/SolutionPage'
 import { AppRoute } from './consts'
 import { AllSolutionsPage } from 'src/pages/SolutionsPage/AllSolutionsPage'
 import { CatalogPage } from 'src/pages/CatalogPage/CatalogPage'
+import { CatalogItemPage } from 'src/pages/CatalogItemPage/CatalogItemPage'
 
 export const MainRoutes = () => {
 	return (
@@ -21,6 +22,10 @@ export const MainRoutes = () => {
 				<Route path={`${AppRoute.Solutions}/:solutionId`} element={<SolutionPage />} />
 				<Route path={AppRoute.Catalog} element={<CatalogPage />} />
 				<Route path={`${AppRoute.Catalog}/:categoryId`} element={<CatalogPage />} />
+				<Route
+					path={`${AppRoute.Catalog}/:categoryId/item/:itemId`}
+					element={<CatalogItemPage />}
+				/>
 				{/* <Route path={AppRoute.Catalog} element={<ChocolatePage />}>
 					<Route path={`${AppRoute.Catalog}/:menuId`} element={<ChocolateList />} />
 					<Route path={`${AppRoute.Catalog}/:menuId/item/:itemId`} element={<ChocolateItem />} />

@@ -4,7 +4,7 @@ type SVGProps = {
 	color?: string
 }
 
-export const MinusSVG: FC<SVGProps> = ({ color = 'black' }) => {
+export const MinusSVG: FC<SVGProps> = ({ color = 'white' }) => {
 	return (
 		<svg width='16' height='16' viewBox='0 0 16 2' fill='none' xmlns='http://www.w3.org/2000/svg'>
 			<rect width='16' height='2' fill={color} />
